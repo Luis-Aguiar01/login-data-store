@@ -12,9 +12,7 @@ class LoggedViewModel(application: Application) : AndroidViewModel(application) 
 
     fun logout() {
         viewModelScope.launch {
-            val (email, password) = repository.dataPreferences.first()
-            val (saveLogin) = repository.loginPreferences.first()
-            repository.savePreferences(email, password, saveLogin, false)
+            repository.savePreferencesLogout()
         }
     }
 }
