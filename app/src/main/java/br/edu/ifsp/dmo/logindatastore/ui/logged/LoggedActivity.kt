@@ -16,6 +16,6 @@ class LoggedActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         viewModel = ViewModelProvider(this).get(LoggedViewModel::class.java)
-        binding.textMessage.text = "Bem-vindo!"
+        binding.textMessage.text = getString(R.string.welcome_message)
     }
 }

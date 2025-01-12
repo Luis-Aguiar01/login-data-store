@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Login Data Store</string>
+    <string name="save_login_data">Salvar dados de login</string>
+    <string name="email_field_hint">E-mail</string>
+    <string name="password_field_hint">Senha</string>
+    <string name="checkbox_keep_loggedin">Manter logado</string>
+    <string name="button_text">Entrar</string>
+    <string name="error_message_login">Erro ao fazer login.</string>
+    <string name="fill_all_data_login">Preencha todos os dados.</string>
+    <string name="welcome_message">Bem-vindo!</string>
 </resources>

@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import br.edu.ifsp.dmo.logindatastore.R
 import br.edu.ifsp.dmo.logindatastore.databinding.ActivityMainBinding
 import br.edu.ifsp.dmo.logindatastore.ui.logged.LoggedActivity
 
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             if (it) {
                 navigateToLoggedActivity()
             } else {
-                Toast.makeText(this, "Erro ao fazer login.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.error_message_login), Toast.LENGTH_SHORT).show()
             }
         })
 
@@ -71,7 +72,7 @@ class MainActivity : AppCompatActivity() {
         if (email.isNotEmpty()) {
             viewModel.login(email, password, saveLogin, stayLoggedIn)
         } else {
-            Toast.makeText(this, "Preencha todos os dados.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.fill_all_data_login), Toast.LENGTH_SHORT).show()
         }
     }
 
