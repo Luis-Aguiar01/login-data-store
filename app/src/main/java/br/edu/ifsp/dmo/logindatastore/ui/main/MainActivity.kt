@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun handleLogin() {
         val email = binding.textEmail.text.toString()
-        val password = binding.textPassword.text.toString().toLong()
+        val password = getPassword()
         val saveLogin = binding.checkboxSaveLogin.isChecked
         val stayLoggedIn = binding.checkboxStayLoggedin.isChecked
 
@@ -75,6 +75,11 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, getString(R.string.fill_all_data_login), Toast.LENGTH_SHORT).show()
         }
     }
+
+    private fun getPassword() = if (binding.textPassword.text.toString().isNotBlank())
+        binding.textPassword.text.toString().toLong()
+    else
+        0L
 
     private fun navigateToLoggedActivity() {
         if (!flag) {
