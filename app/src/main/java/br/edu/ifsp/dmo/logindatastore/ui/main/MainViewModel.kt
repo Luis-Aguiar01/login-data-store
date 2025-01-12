@@ -12,7 +12,6 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val repository = DataStoreRepository(application)
-
     val loginPreferences: LiveData<Pair<Boolean, Boolean>> = repository.loginPreferences.asLiveData()
     val dataPreferences: LiveData<Pair<String, Long>> = repository.dataPreferences.asLiveData()
     private val _loggedIn = MutableLiveData<Boolean>()

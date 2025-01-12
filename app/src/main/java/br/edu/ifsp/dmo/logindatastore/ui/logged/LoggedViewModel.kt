@@ -1,6 +1,20 @@
 package br.edu.ifsp.dmo.logindatastore.ui.logged
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
+import br.edu.ifsp.dmo.logindatastore.data.DataStoreRepository
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
-class LoggedViewModel : ViewModel() {
+class LoggedViewModel(application: Application) : AndroidViewModel(application) {
+    private val repository = DataStoreRepository(application)
+
+    fun logout() {
+        viewModelScope.launch {
+            val (email, password) = repository.dataPreferences.first()
+            val (saveLogin) = repository.loginPreferences.first()
+            repository.savePreferences(email, password, saveLogin, false)
+        }
+    }
 }

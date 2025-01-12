@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun handleLogin() {
         val email = binding.textEmail.text.toString()
-        val password = binding.textPassword.toString().toLong()
+        val password = binding.textPassword.text.toString().toLong()
         val saveLogin = binding.checkboxSaveLogin.isChecked
         val stayLoggedIn = binding.checkboxStayLoggedin.isChecked
 
