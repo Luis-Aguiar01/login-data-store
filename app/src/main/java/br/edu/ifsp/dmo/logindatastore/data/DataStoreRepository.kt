@@ -11,7 +11,6 @@ import br.edu.ifsp.dmo.logindatastore.util.dataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-
 class DataStoreRepository(context: Context) {
     private val dataStore: DataStore<Preferences> = context.dataStore
 
